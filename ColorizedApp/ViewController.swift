@@ -19,17 +19,18 @@ final class ViewController: UIViewController {
     @IBOutlet private var greenSlider: UISlider!
     @IBOutlet private var blueSlider: UISlider!
     
-    var redColor = 0.0
-    var greenColor = 0.0
-    var blueColor = 0.0
+    private var redColor = 0.0
+    private var greenColor = 0.0
+    private var blueColor = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        view.backgroundColor = UIColor(patternImage: .background)
+
     }
-    
     
     @IBAction func redSliderValueChanged() {
         redLabel.text = "Red: \(round(redSlider.value * 100) / 100)"

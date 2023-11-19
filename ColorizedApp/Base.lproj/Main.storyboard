@@ -57,8 +57,8 @@
                                     <constraint firstItem="RcT-Wh-fgh" firstAttribute="centerY" secondItem="d6A-cU-CbX" secondAttribute="centerY" id="eoa-jq-2lQ"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-p8-bYD">
-                                <rect key="frame" x="16" y="297" width="95" height="111"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-p8-bYD">
+                                <rect key="frame" x="16" y="301" width="95" height="101"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB6-1S-JF8">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="20.333333333333332"/>
@@ -67,13 +67,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-sz-fCd">
-                                        <rect key="frame" x="0.0" y="45.333333333333314" width="95" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="40.333333333333314" width="95" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-4g-yeP">
-                                        <rect key="frame" x="0.0" y="90.666666666666686" width="95" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="80.666666666666686" width="95" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                             <constraint firstItem="d6A-cU-CbX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="qjd-lj-tbz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d6A-cU-CbX" secondAttribute="bottom" constant="410" id="tp4-xD-QGd"/>
                             <constraint firstItem="EAb-p8-bYD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16.000000000000004" id="tpr-ob-dWK"/>
-                            <constraint firstItem="EAb-p8-bYD" firstAttribute="top" secondItem="aM2-tg-XIX" secondAttribute="bottom" constant="46" id="u4G-uc-r1N"/>
+                            <constraint firstItem="EAb-p8-bYD" firstAttribute="top" secondItem="aM2-tg-XIX" secondAttribute="bottom" constant="50" id="u4G-uc-r1N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aM2-tg-XIX" secondAttribute="trailing" constant="16" id="yl8-Yb-KDD"/>
                         </constraints>
                     </view>
