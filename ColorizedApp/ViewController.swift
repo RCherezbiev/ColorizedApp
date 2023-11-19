@@ -15,6 +15,10 @@ final class ViewController: UIViewController {
     @IBOutlet private var greenLabel: UILabel!
     @IBOutlet private var blueLabel: UILabel!
     
+    @IBOutlet var redValueLabel: UILabel!
+    @IBOutlet var greenValueLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
+    
     @IBOutlet private var redSlider: UISlider!
     @IBOutlet private var greenSlider: UISlider!
     @IBOutlet private var blueSlider: UISlider!
@@ -28,24 +32,26 @@ final class ViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        
         view.backgroundColor = UIColor(patternImage: .background)
-
+        
+        updateColorView()
     }
     
     @IBAction func redSliderValueChanged() {
-        redLabel.text = "Red: \(round(redSlider.value * 100) / 100)"
+        redValueLabel.text = "\(round(redSlider.value * 100) / 100)"
         redColor = CGFloat(redSlider.value)
         updateColorView()
     }
     
     @IBAction func greenSliderValueChanged() {
-        greenLabel.text = "Green: \(round(greenSlider.value * 100) / 100)"
+        greenValueLabel.text = "\(round(greenSlider.value * 100) / 100)"
         greenColor = CGFloat(greenSlider.value)
         updateColorView()
     }
     
     @IBAction func blueSliderValueChanged() {
-        blueLabel.text = "Blue: \(round(blueSlider.value * 100) / 100)"
+        blueValueLabel.text = "\(round(blueSlider.value * 100) / 100)"
         blueColor = CGFloat(blueSlider.value)
         updateColorView()
     }
