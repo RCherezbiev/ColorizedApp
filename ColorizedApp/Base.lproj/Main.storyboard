@@ -124,14 +124,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="YO1-4g-yeP" id="gPH-Ve-YRT"/>
                         <outlet property="blueSlider" destination="2qb-aF-jZA" id="kjC-EE-XMh"/>
                         <outlet property="blueValueLabel" destination="O0T-5b-ZaY" id="PHP-pQ-7kb"/>
                         <outlet property="colorDisplayView" destination="aM2-tg-XIX" id="daM-y9-HDb"/>
-                        <outlet property="greenLabel" destination="mgg-sz-fCd" id="nyJ-Dy-qK6"/>
                         <outlet property="greenSlider" destination="RcT-Wh-fgh" id="Ir8-Ya-I4x"/>
                         <outlet property="greenValueLabel" destination="GdN-9v-8eB" id="2AX-0n-Ggt"/>
-                        <outlet property="redLabel" destination="aB6-1S-JF8" id="nPF-Vp-rjo"/>
                         <outlet property="redSlider" destination="qVc-9D-U2y" id="9Qn-0F-CAK"/>
                         <outlet property="redValueLabel" destination="C32-Gf-yd6" id="LSW-ru-YYS"/>
                     </connections>

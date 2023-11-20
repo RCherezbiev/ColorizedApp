@@ -11,17 +11,15 @@ final class ViewController: UIViewController {
 
     @IBOutlet private var colorDisplayView: UIView!
     
-    @IBOutlet private var redLabel: UILabel!
-    @IBOutlet private var greenLabel: UILabel!
-    @IBOutlet private var blueLabel: UILabel!
-    
-    @IBOutlet var redValueLabel: UILabel!
-    @IBOutlet var greenValueLabel: UILabel!
-    @IBOutlet var blueValueLabel: UILabel!
+    @IBOutlet private var redValueLabel: UILabel!
+    @IBOutlet private var greenValueLabel: UILabel!
+    @IBOutlet private var blueValueLabel: UILabel!
     
     @IBOutlet private var redSlider: UISlider!
     @IBOutlet private var greenSlider: UISlider!
     @IBOutlet private var blueSlider: UISlider!
+    
+    private let alphaValue: CGFloat = 1.0
     
     private var redColor = 0.0
     private var greenColor = 0.0
@@ -33,25 +31,26 @@ final class ViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         
+        
         view.backgroundColor = UIColor(patternImage: .background)
         
         updateColorView()
     }
     
     @IBAction func redSliderValueChanged() {
-        redValueLabel.text = "\(round(redSlider.value * 100) / 100)"
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
         redColor = CGFloat(redSlider.value)
         updateColorView()
     }
     
     @IBAction func greenSliderValueChanged() {
-        greenValueLabel.text = "\(round(greenSlider.value * 100) / 100)"
+        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
         greenColor = CGFloat(greenSlider.value)
         updateColorView()
     }
     
     @IBAction func blueSliderValueChanged() {
-        blueValueLabel.text = "\(round(blueSlider.value * 100) / 100)"
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
         blueColor = CGFloat(blueSlider.value)
         updateColorView()
     }
@@ -61,7 +60,7 @@ final class ViewController: UIViewController {
             red: redColor,
             green: greenColor,
             blue: blueColor,
-            alpha: 1.0
+            alpha: alphaValue
         )
         colorDisplayView.backgroundColor = color
     }
