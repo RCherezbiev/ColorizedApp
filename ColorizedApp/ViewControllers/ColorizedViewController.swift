@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ColorizedViewController: UIViewController {
 
     @IBOutlet private var colorDisplayView: UIView!
     
@@ -21,45 +21,42 @@ final class ViewController: UIViewController {
     
     private let alphaValue: CGFloat = 1.0
     
-    private var redColor = 0.0
-    private var greenColor = 0.0
-    private var blueColor = 0.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         
-        
         view.backgroundColor = UIColor(patternImage: .background)
         
         updateColorView()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @IBAction func redSliderValueChanged() {
         redValueLabel.text = String(format: "%.2f", redSlider.value)
-        redColor = CGFloat(redSlider.value)
         updateColorView()
     }
     
     @IBAction func greenSliderValueChanged() {
         greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        greenColor = CGFloat(greenSlider.value)
         updateColorView()
     }
     
     @IBAction func blueSliderValueChanged() {
         blueValueLabel.text = String(format: "%.2f", blueSlider.value)
-        blueColor = CGFloat(blueSlider.value)
         updateColorView()
     }
     
     private func updateColorView() {
         let color = UIColor(
-            red: redColor,
-            green: greenColor,
-            blue: blueColor,
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: alphaValue
         )
         colorDisplayView.backgroundColor = color
