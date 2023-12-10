@@ -8,24 +8,28 @@
 import UIKit
 
 final class ColorizedViewController: UIViewController {
-
-    @IBOutlet private var colorDisplayView: UIView!
     
-    @IBOutlet private var redValueLabel: UILabel!
-    @IBOutlet private var greenValueLabel: UILabel!
-    @IBOutlet private var blueValueLabel: UILabel!
+    @IBOutlet var colorDisplayView: UIView!
     
-    @IBOutlet private var redSlider: UISlider!
-    @IBOutlet private var greenSlider: UISlider!
-    @IBOutlet private var blueSlider: UISlider!
+    @IBOutlet var redValueLabel: UILabel!
+    @IBOutlet var greenValueLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
     
-    private let alphaValue: CGFloat = 1.0
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+    
+    let alphaValue: CGFloat = 1
+    var backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+    
+    weak var delegate: ColorizedViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+        navigationItem.hidesBackButton = true
         
         view.backgroundColor = UIColor(patternImage: .background)
         
@@ -52,13 +56,18 @@ final class ColorizedViewController: UIViewController {
         updateColorView()
     }
     
-    private func updateColorView() {
-        let color = UIColor(
+    @IBAction func doneButtonAction() {
+        delegate?.updateBackgroundColor(colorDisplayView.backgroundColor ?? .black)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func updateColorView() {
+        colorDisplayView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: alphaValue
         )
-        colorDisplayView.backgroundColor = color
     }
+    
 }
